@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    //Reference to the bullet prefab
+    public GameObject bulletPrefab;
 
-    // Update is called once per frame
+    //Reference to the point where bullets will appear
+    public Transform firePoint;
+    
     void Update()
     {
-        
+        //Press Space to shoot
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        //Create a bullet at the firePoint position and rotation
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
