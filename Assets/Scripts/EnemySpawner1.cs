@@ -3,12 +3,10 @@ using UnityEngine;
 public class EnemySpawner1 : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public Transform player;
     public float spawnInterval = 2f;
-    public int maxEnemies = 20;
-    public float minX = -8f;
-    public float maxX = 8f;
-    public float minZ = -8f;
-    public float maxZ = 8f;
+    public int maxEnemies = 10;
+    public float radius = 8f;
 
     void Start()
     {
@@ -22,9 +20,8 @@ public class EnemySpawner1 : MonoBehaviour
         if (enemies.Length >= maxEnemies)
             return;
 
-        float randomX = Random.Range(minX, maxX);
-        float randomZ = Random.Range(minZ, maxZ);
-        Vector3 spawnPosition = new Vector3(randomX, 0.5f, randomZ);
+        Vector2 circle = Random.insideUnitCircle * radius;
+        Vector3 spawnPosition = new Vector3(player.position.x + circle.x, 0.5f, player. position.z + circle.y);
         Instantiate(enemyPrefab, spawnPosition, enemyPrefab.transform.rotation);
     }
 }
