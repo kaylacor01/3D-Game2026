@@ -179,7 +179,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &43779575
 BoxCollider:
@@ -287,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dda79a3f000e4cae8e4e631a7fb49cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  bulletPrefab: {fileID: 7735967017319233099, guid: 13f69294e0e30449aa616d450e42858e, type: 3}
+  firePoint: {fileID: 1519305644}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb1dcc84473242c396c586bc3be9d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  enemyPrefab: {fileID: 1916870719059017350, guid: c68a3afd1776e4ddcbfc422ecaaf14e6, type: 3}
+  enemyPrefab: {fileID: 7213168750395494141, guid: 5057f3a345b2942989eddfbef9175f1e, type: 3}
   spawnInterval: 2
   maxEnemies: 20
   minX: -8

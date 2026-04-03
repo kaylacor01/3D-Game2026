@@ -25,6 +25,6 @@ public class EnemySpawner1 : MonoBehaviour
         float randomX = Random.Range(minX, maxX);
         float randomZ = Random.Range(minZ, maxZ);
         Vector3 spawnPosition = new Vector3(randomX, 0.5f, randomZ);
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        Instantiate(enemyPrefab, spawnPosition, enemyPrefab.transform.rotation);
     }
 }
